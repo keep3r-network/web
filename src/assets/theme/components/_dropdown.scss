@@ -1,0 +1,127 @@
+.custom-select {
+    position: relative;
+    width: 100%;
+    outline: none;
+    height: 40px;
+    line-height: 42px;
+    font-size: var(--global-m-size);
+    margin-bottom: 1.5rem;
+}
+.select {
+    min-width: 230px;
+    .selected {
+        display: flex;
+        border: solid 1px var(--color-primary);
+        background: var(--color-gray-light);
+        // padding-left: 4.5rem;
+        cursor: pointer;
+        user-select: none;
+        font-size: 1.6rem;
+        font-weight: var(--weight-bold);
+        height: 40px;
+        padding-left: 1rem;
+    }
+}
+
+.select .selected.open {
+    border: solid 1px var(--color-primary);
+}
+.select {
+    .select-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    .select-name {
+        margin-right: 1rem;
+        white-space: nowrap;
+    }
+    .select-tag span {
+        font-size: 1.5rem;
+        font-weight: normal;
+        padding: 0.5rem 1rem 0.3rem 1rem;
+        background: #D1D1D1;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        // padding-left: 5rem;
+        position: relative;
+        margin-right: 1rem;
+
+        .select-icon:nth-child(2){
+            margin-left: -8px;
+        }
+    }
+
+    &.top-items {
+        .items {
+            bottom: 100%;
+            border-top: 1px solid var(--color-primary);
+            border-bottom: 0;
+        }
+    }
+    // NOTE for alu
+    // &[size="double"] {
+    //     etc
+    // }
+}
+.select .selected:after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background: url('../assets/chevron-down.svg') no-repeat center;
+}
+
+.items {
+    background: var(--color-gray-light);
+    border-right: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 30rem;
+}
+
+.item {
+    display: flex;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.6rem;
+    font-weight: var(--weight-bold);
+    position: relative;
+    padding-left: 1rem;
+    // padding-left: 4.5rem;
+}
+// .select.single .select-icon {
+//     width: 24px;
+//     height: 24px;
+// }
+// .select.double {
+//     .selected {
+//         padding-left: 5rem;
+//     }
+// }
+.item:hover {
+  background-color: #DEDEDE;
+}
+
+.item.selectedItem {
+    background-color: var(--color-gray);
+    color: var(--color-light);
+}
+
+.selectHide {
+  display: none;
+}

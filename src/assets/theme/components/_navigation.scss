@@ -1,0 +1,32 @@
+.navigation {
+    ul {
+        display: flex;
+        justify-content: center;
+        li {
+            font-size: var(--global-l-size);
+            text-align: center;
+            margin: 1rem;
+            @media screen and (min-width: 430px) {
+                margin: 0 2rem 0 0;
+            }
+            a {
+                color: var(--color-primary);
+                opacity: .5;
+                font-weight: var(--weight-bold);
+                text-decoration: none;
+                padding-bottom: .1em;
+                &:hover {
+                    opacity: 1;
+                }
+                &.router-link-exact-active {
+                    opacity: 1;
+                    border-bottom: solid 2px var(--color-primary);
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            
+        }
+    }
+}

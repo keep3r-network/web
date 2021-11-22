@@ -1,0 +1,38 @@
+.job {
+    border-bottom: solid 1px var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--color-light);
+    }
+    &:first-child {
+        border-top: solid 1px var(--color-gray);
+    }
+    .job-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 1em 0;
+        flex-wrap: wrap;
+        .job-name {
+            margin: 0;
+            text-transform: none;
+            font-style: normal;
+        }
+        .job-number {
+            font-size: 2rem;
+            font-weight: var(--weight-bold);
+        }
+        .job-link, .job-credits {
+            font-size: 1.6rem;
+            font-style: italic;
+        }
+    }
+}
+.box-list-jobs {
+    max-height: 85vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+}

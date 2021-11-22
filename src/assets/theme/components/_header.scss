@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--global-page-padding-m) 2rem;
+    > div:nth-child(2) {
+        margin: 0 var(--global-page-padding-m) 0 0;
+    }
+    .logo {
+        max-width: 100%;
+        @media screen and (min-width: 768px) {
+            margin-bottom: 0;
+        }
+    }
+    .quote {
+        border: solid 1px var(--color-primary);
+        font-size: var(--global-m-size);
+        text-align: center;
+        padding: var(--global-page-padding-s);
+        line-height: 2rem;
+        display: none;
+        span {
+            display: block;
+        }
+    }
+    .k-button {
+        margin-bottom: 0;
+    }
+    @media screen and (min-width: 768px) {
+        padding: var(--global-page-padding-m) 3.2rem;
+        .quote {
+            display: block;
+        }
+        > div:nth-child(2) {
+            margin: 0 var(--global-page-padding-m);
+        }
+    }
+}

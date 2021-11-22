@@ -1,0 +1,48 @@
+.k-input {
+  --input-height: 40px;
+
+  &.error {
+    .form-group > span {
+      border-color: var(--color-red);
+    }
+  }
+  .form-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    height: var(--input-height);
+    border: 1px solid black;
+
+    & > span,
+    .form-field {
+      white-space: nowrap;
+      display: block;
+      outline: none;
+      &:not(:first-child) {
+          margin-left: -1px;
+      }
+    }
+    .form-field {
+      position: relative;
+      z-index: 1;
+      flex: 1 1 auto;
+    }
+    input {
+      border: 0;
+    }
+    & > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 0;
+      top: 0;
+      text-align: center;
+      padding-right: var(--global-page-padding-m);
+      font-size: var(--global-m-size);
+      height: 100%;
+      user-select: none;
+      z-index: 2;
+    }
+  }
+}
