@@ -8,7 +8,7 @@
       <Navigation />
       <div class="navbar-side">
         <p>This project is in beta. Use at your own risk.</p>
-        <a href="https://discord.gg/NZQjWCtXFS" target="_blank"><img alt="Discord" src="../assets/discord.svg" /></a>
+        <a href="https://discord.gg/9JBxTWR4nZ" target="_blank"><img alt="Discord" src="../assets/discord.svg" /></a>
         <a href="https://gov.yearn.finance/c/projects/keep3r/20" target="_blank">
           <img alt="Discourse" src="../assets/discourse.svg" />
         </a>
