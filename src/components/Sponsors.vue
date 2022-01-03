@@ -46,9 +46,9 @@ export default {
           link: 'https://www.hegic.co/',
         },
         {
-          name: 'BZRX',
-          photoURL: require('../assets/BZRX.png'),
-          link: 'https://bzx.network/',
+          name: 'Mean Finance',
+          photoURL: require('../assets/MeanFinance.png'),
+          link: 'https://mean.finance/',
         },
       ],
     };
