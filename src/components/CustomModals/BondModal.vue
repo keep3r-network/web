@@ -117,7 +117,7 @@ export default {
       return t ? DateTime.fromSeconds(t).toLocaleString(DateTime.DATETIME_SHORT) : 'N/A' || 'N/A';
     },
     formIsValid() {
-      return this.amount > 0;
+      return this.amount >= 0;
     },
     setBondMaxValue() {
       return humanizeAmount(BigNumber(this.selectUserKeeperTokenData.balanceOfRaw), undefined, '18');

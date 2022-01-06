@@ -211,7 +211,7 @@ export const actions: ActionTree<KeepersState, AppState> = {
     commit('BOND_KEEPER_TOKEN', { tokenAddress });
     const tokenData = state.keeperTokensMap[tokenAddress];
     const userKeeperTokensData = state.user.userKeeperTokensMap[tokenAddress];
-    if (amount.isNaN() || amount.lte(0)) {
+    if (amount.isNaN() || amount.lt(0)) {
       dispatch('alerts/openAlert', { type: 'error', message: 'Invalid amount.' }, { root: true });
       return commit('BOND_KEEPER_TOKEN_FAILURE', { error: 'INVALID AMOUNT', tokenAddress });
     }
