@@ -15,6 +15,7 @@ import {
 } from '@/shared/job.models';
 import { getWeb3Tools, ONE_ETH } from '@/shared/web3.helper';
 import { JobsState } from './jobs.state';
+import { toHex } from '@/shared/utils';
 
 export const actions: ActionTree<JobsState, AppState> = {
   async initiateJobsList({ commit, dispatch }) {
@@ -157,7 +158,7 @@ export const actions: ActionTree<JobsState, AppState> = {
       const { methods: liqManagerMethods } = web3helper.LiquidityManagerContract;
 
       await liqManagerMethods
-        .setJobLiquidityAmount(liqAddress, jobAddress, amount)
+        .setJobLiquidityAmount(liqAddress, jobAddress, toHex(amount))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
@@ -206,7 +207,7 @@ export const actions: ActionTree<JobsState, AppState> = {
       const { methods: liqManagerMethods } = web3helper.LiquidityManagerContract;
 
       await liqManagerMethods
-        .removeIdleLiquidityFromJob(liqAddress, jobAddress, amount)
+        .removeIdleLiquidityFromJob(liqAddress, jobAddress, toHex(amount))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });

@@ -13,3 +13,7 @@ export function normalizeString(input: string): string {
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase();
 }
+
+export function toHex(value: BigNumber): string {
+  return '0x' + value.toString(16);
+}

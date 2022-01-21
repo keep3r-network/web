@@ -7,6 +7,7 @@ import * as ERC20 from '@/assets/contracts/ERC20.json';
 import { LiquidityData, UserLiquidityData } from '@/shared/liquidity.models';
 import BigNumber from 'bignumber.js';
 import { LiquiditiesState } from './liquidities.state';
+import { toHex } from '@/shared/utils';
 
 export const actions: ActionTree<LiquiditiesState, AppState> = {
   async initiateLiquidities({ commit, dispatch }) {
@@ -125,7 +126,7 @@ export const actions: ActionTree<LiquiditiesState, AppState> = {
       const liqManagerAddress = web3helper.LiquidityManagerContract._address;
 
       await lpTokenContract.methods
-        .approve(liqManagerAddress, MAX_ETH)
+        .approve(liqManagerAddress, toHex(MAX_ETH))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
@@ -166,7 +167,7 @@ export const actions: ActionTree<LiquiditiesState, AppState> = {
       }
 
       await liqManagerMethods
-        .depositLiquidity(liqAddress, amount)
+        .depositLiquidity(liqAddress, toHex(amount))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
@@ -206,7 +207,7 @@ export const actions: ActionTree<LiquiditiesState, AppState> = {
       const { methods: liqManagerMethods } = web3helper.LiquidityManagerContract;
 
       await liqManagerMethods
-        .withdrawLiquidity(liqAddress, amount)
+        .withdrawLiquidity(liqAddress, toHex(amount))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });

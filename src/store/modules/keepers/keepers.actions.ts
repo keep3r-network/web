@@ -11,6 +11,7 @@ import {
 } from '@/shared/keepers.models';
 import { getWeb3Tools, isKp3r, MAX_ETH } from '@/shared/web3.helper';
 import { KeepersState, KeeperTokensMap, UserKeeperTokenActionsMap, UserKeeperTokensMap } from './keepers.state';
+import { toHex } from '@/shared/utils';
 
 export const actions: ActionTree<KeepersState, AppState> = {
   async initiateKeepersData({ commit, dispatch, state }, { addresses }) {
@@ -189,7 +190,7 @@ export const actions: ActionTree<KeepersState, AppState> = {
       const tokenContract = web3helper.contractsMap[tokenAddress];
 
       await tokenContract.methods
-        .approve(keep3rContract._address, MAX_ETH)
+        .approve(keep3rContract._address, toHex(MAX_ETH))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
@@ -235,7 +236,7 @@ export const actions: ActionTree<KeepersState, AppState> = {
       }
 
       await keep3rContract.methods
-        .bond(tokenAddress, amount)
+        .bond(tokenAddress, toHex(amount))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
@@ -275,7 +276,7 @@ export const actions: ActionTree<KeepersState, AppState> = {
       const keep3rContract = web3helper.keep3rContract;
 
       await keep3rContract.methods
-        .unbond(tokenAddress, amount)
+        .unbond(tokenAddress, toHex(amount))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
@@ -355,7 +356,7 @@ export const actions: ActionTree<KeepersState, AppState> = {
       const keep3rContract = web3helper.keep3rContract;
 
       await keep3rContract.methods
-        .slash(tokenAddress, userAddress, bonded)
+        .slash(tokenAddress, userAddress, toHex(bonded))
         .send({ from: currentAccount })
         .on('transactionHash', function (hash: string) {
           dispatch('alerts/openAlert', { message: 'Transaction submited' }, { root: true });
