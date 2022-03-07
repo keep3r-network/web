@@ -85,9 +85,8 @@ export const actions: ActionTree<WalletState, AppState> = {
       const networkIsNotWhitelisted = !networkList.find((n) => n.id === networkId);
       const isNotTestnet = (await web3Helper.web3.eth.net.getNetworkType()) === 'private';
 
-      const openNetworkModal = process.env.NODE_ENV === 'development'
-        ? networkIsNotWhitelisted && isNotTestnet
-        : networkIsNotWhitelisted;
+      const openNetworkModal =
+        process.env.NODE_ENV === 'development' ? networkIsNotWhitelisted && isNotTestnet : networkIsNotWhitelisted;
 
       if (openNetworkModal) {
         dispatch('modals/openModal', { name: 'network', closable: false }, { root: true });
