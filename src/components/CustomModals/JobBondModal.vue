@@ -216,7 +216,7 @@ export default {
       this.inputSet = value;
     },
     openJobUnbondModal() {
-      this.$store.dispatch('modals/openModal', { modal: 'jobUnbond' });
+      this.$store.dispatch('modals/openModal', { name: 'jobUnbond' });
     },
   },
 };

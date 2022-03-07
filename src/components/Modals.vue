@@ -16,6 +16,7 @@ import JobUnbondModal from '@/components/CustomModals/JobUnbondModal';
 import BondModal from '@/components/CustomModals/BondModal';
 import UnbondModal from '@/components/CustomModals/UnbondModal';
 import KeeperModal from '@/components/CustomModals/KeeperModal';
+import NetworkModal from '@/components/CustomModals/NetworkModal';
 
 const MODALS = [
   { key: 'jobBond', component: JobBondModal },
@@ -23,6 +24,7 @@ const MODALS = [
   { key: 'bond', component: BondModal },
   { key: 'unbond', component: UnbondModal },
   { key: 'keeper', component: KeeperModal },
+  { key: 'network', component: NetworkModal },
 ];
 
 export default {
@@ -33,15 +35,20 @@ export default {
     BondModal,
     UnbondModal,
     KeeperModal,
+    NetworkModal,
   },
   computed: {
     ...mapGetters('modals', ['selectActiveModal']),
     activeModal() {
-      return MODALS.find(({ key }) => key === this.selectActiveModal);
+      return MODALS.find(({ key }) => key === this.selectActiveModal.name);
     },
   },
   methods: {
     closeModal() {
+      if (!this.selectActiveModal.closable) {
+        return;
+      }
+
       this.$store.dispatch('modals/closeModal');
     },
   },

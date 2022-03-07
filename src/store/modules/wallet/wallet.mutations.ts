@@ -13,11 +13,26 @@ export const mutations: MutationTree<WalletState> = {
     state.status = new Status({ loading: true });
   },
 
-  CONNECT_SUCCESS: (state: WalletState, { connected, secureConnection, address }) => {
+  NETWORK_CHANGE_SUCCESS: (state: WalletState, { id }) => {
+    console.log('Change network success', id);
+    state.selectedNetwork = id;
+    state.status = new Status({});
+  },
+
+  CONNECT_SUCCESS: (
+    state: WalletState,
+    {
+      connected,
+      secureConnection,
+      address,
+      networkId,
+    }: { connected: boolean; secureConnection: boolean; address: string; networkId: string }
+  ) => {
     state.connected = connected;
     state.secureConnection = secureConnection;
     state.address = address;
     state.status = new Status({});
+    state.selectedNetwork = networkId;
   },
 
   CONNECT_FAILURE: (state: WalletState, { error }) => {
@@ -38,5 +53,10 @@ export const mutations: MutationTree<WalletState> = {
   DISCONNECT_FAILURE: (state: WalletState, { error }) => {
     console.error(error);
     state.status = new Status({ error: error.message ?? error });
+  },
+
+  SWITCH_NETWORK_FAILURE: (state: WalletState, { error }) => {
+    console.error(error);
+    state.status = new Status({ error: error?.message ?? error });
   },
 };

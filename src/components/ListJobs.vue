@@ -39,7 +39,7 @@ export default {
   methods: {
     selectJob(jobAddress) {
       this.$store.dispatch('jobs/selectJob', { jobAddress });
-      this.$store.dispatch('modals/openModal', { modal: 'jobBond' });
+      this.$store.dispatch('modals/openModal', { name: 'jobBond' });
     },
   },
 };

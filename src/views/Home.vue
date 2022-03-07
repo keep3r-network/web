@@ -120,7 +120,7 @@ import Search from '@/components/Search.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import ListDots from '@/components/ListDots.vue';
 import ListJobs from '@/components/ListJobs.vue';
-import Loading from '@/components/Loading';
+import Loading from '@/components/Loading.vue';
 
 export default {
   name: 'Home',
@@ -139,7 +139,7 @@ export default {
     getKeeperTokenOptions() {
       return this.selectKeeperTokens.map((keeperToken) => ({
         ...keeperToken,
-        value: keeperToken.symbol,
+        label: keeperToken.symbol,
       }));
     },
   },
@@ -154,8 +154,8 @@ export default {
         tokenAddresses: [keeperToken.address],
       });
     },
-    openModal(modal) {
-      this.$store.dispatch('modals/openModal', { modal });
+    openModal(name) {
+      this.$store.dispatch('modals/openModal', { name });
     },
     searchJob(query) {
       this.$store.dispatch('jobs/searchJobs', { query });
@@ -163,7 +163,7 @@ export default {
     findKeeper(address) {
       if (address?.length) {
         // TODO dispatch find keeper
-        this.$store.dispatch('modals/openModal', { modal: 'keeper' });
+        this.$store.dispatch('modals/openModal', { name: 'keeper' });
         this.$store.commit('keepers/SET_CURRENT_EXTERNAL_ADDRESS', { address });
         this.$store.dispatch('keepers/getExternalKeeperData', { accountAddress: address });
       }

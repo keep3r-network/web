@@ -1,4 +1,10 @@
 import { Status } from '../../../shared/status.model';
+import { networkList } from '../../../shared/networkList';
+
+export interface Network {
+  name: string;
+  id: string;
+}
 
 export interface WalletState {
   secureConnection: boolean;
@@ -7,6 +13,8 @@ export interface WalletState {
   provider: any;
   web3: any;
   status: Status;
+  selectedNetwork: string;
+  networkList: Network[];
 }
 
 export const state: WalletState = {
@@ -19,4 +27,6 @@ export const state: WalletState = {
     loading: false,
     error: '',
   },
+  networkList,
+  selectedNetwork: '',
 };

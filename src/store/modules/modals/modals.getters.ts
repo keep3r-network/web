@@ -1,9 +1,9 @@
 import { GetterTree } from 'vuex';
 import { AppState } from '@/store';
-import { ModalsState } from './modals.state';
+import { ActiveModal, ModalsState } from './modals.state';
 
 export const getters: GetterTree<ModalsState, AppState> = {
-  selectActiveModal: (state: ModalsState): string => {
+  selectActiveModal: (state: ModalsState): ActiveModal => {
     return state.activeModal;
   },
 };

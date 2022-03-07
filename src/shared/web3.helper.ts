@@ -14,7 +14,7 @@ export const MAX_ETH = new BigNumber(2).pow(256).minus(1);
 // NOTE If you use infura instead of RPC_URL
 // const INFURA_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
-const RPC_URL = 'https://eth-mainnet.alchemyapi.io/v2/R_8p_DAM4hFUpvxZBexIvPt_A89tk1py';
+const RPC_URL =  process.env.VUE_APP_RPC_URL ?? 'https://eth-mainnet.alchemyapi.io/v2/R_8p_DAM4hFUpvxZBexIvPt_A89tk1py';
 const RPC_WSS_URL = 'wss://eth-mainnet.alchemyapi.io/v2/R_8p_DAM4hFUpvxZBexIvPt_A89tk1py';
 
 // export const blockNumberSubscription: BehaviorSubject<number> = new BehaviorSubject(
@@ -97,7 +97,7 @@ export class Web3Helper {
       }
     } catch (e) {
       console.error('Could not get a wallet connection', e);
-      throw new Error(e?.message ?? 'Could not get a wallet connection');
+      return;
     }
 
     if (!onlyAlchemy) {

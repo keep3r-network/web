@@ -243,7 +243,7 @@ export default {
       this.inputSet = value;
     },
     openJobBondModal() {
-      this.$store.dispatch('modals/openModal', { modal: 'jobBond' });
+      this.$store.dispatch('modals/openModal', { name: 'jobBond' });
     },
   },
 };
