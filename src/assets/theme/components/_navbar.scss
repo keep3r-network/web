@@ -1,0 +1,35 @@
+.navbar {
+    width: 100%;
+    border-top: solid 1px var(--color-gray);
+    border-bottom: solid 1px var(--color-gray);
+    padding: var(--global-page-padding-s) var(--global-page-padding-m);
+    margin-bottom: 2em;
+    @media screen and (min-width: 768px) {
+        padding: .5rem 0;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            padding: 0 3.2rem;
+            & div {
+                width: 50%;
+            }
+        }
+    }
+    .navbar-side {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        a {
+            margin-left: 1em;
+        }
+    }
+    p {
+        font-size: var(--global-l-size);
+        font-weight: var(--weight-bold);
+        margin: 0;
+    }
+}

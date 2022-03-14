@@ -1,0 +1,21 @@
+.list-dots {
+    li {
+        display: flex;
+        font-style: italic;
+        margin-bottom: .8em;
+        .name {
+            flex: 1;
+            display: flex;
+            &:after {
+                content: '';
+                border-bottom: dashed 2px var(--color-primary);
+                flex:1;
+                margin: 4px;
+            }
+        }
+        .number {
+            text-align: right;
+            font-weight: var(--weight-bold);
+        }
+    }
+}

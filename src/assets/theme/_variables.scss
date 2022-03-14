@@ -1,0 +1,33 @@
+:root {
+  --color-primary: #333333;
+  --color-gray-light: #f1f1f1;
+  --color-light: #ffffff;
+  --color-gray: #666666;
+  --color-red: #FF2D1A;
+  --color-light-rgb: 51, 51, 51;
+
+  --color-error: #ff5352;
+  --bg-error: #ffeaeb;
+  --bg-success: #eaf6ea;
+  --color-success: #8ab570;
+  --color-info: #2196f3;
+  --bg-info: #e6f3fe;
+
+  --global-font-size: 62.5%;
+  --global-primary-font: 'Newsreader', serif;
+  --global-page-padding-s: 1rem;
+  --global-page-padding-m: 2rem;
+  --global-page-padding-x: 3rem;
+  --global-page-padding-xl: 3rem;
+  --global-page-padding-xxl: 4rem;
+  --global-navbar-size: 6rem;
+  --global-m-size: 1.6rem;
+  --global-l-size: 1.8rem;
+  --global-xl-size: 2.4rem;
+
+  --weight-bold: 700;
+  --hover-transition: 150ms ease;
+
+  --z-index-modals: 1000;
+  --z-index-alerts: 1100;
+}
