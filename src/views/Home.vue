@@ -36,11 +36,9 @@
               <div class="column"><Button size="small" @onClick="openModal('mintLiquidity')">Mint</Button></div>
               <div class="column"><Button size="small" @onClick="openModal('burnLiquidity')">Burn</Button></div>
             </div>
-            <!-- 
-              @TODO uncomment
               <div class="row">
               <div class="column bridge-button"><Button size="small" @onClick="openBridgeSite('klp')">Bridge</Button></div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -90,11 +88,9 @@
                 <div class="column"><Button size="small" @onClick="openModal('bond')">Bond</Button></div>
                 <div class="column"><Button size="small" @onClick="openModal('unbond')">Unbond</Button></div>
               </div>
-              <!--
-                @TODO uncomment
                 <div class="row">
                 <div class="column bridge-button"><Button size="small" @onClick="openBridgeSite('bond')">Bridge</Button></div>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>

@@ -9,15 +9,13 @@
     <div class="wallet-container">
       <Button size="large" v-if="!getIsWalletConnected" @onClick="connectWallet">Connect Wallet</Button>
       <Button size="large" v-if="getIsWalletConnected" @onClick="disconnectWallet">{{ shortAddress }}</Button>
-      <!--
-        @TODO uncomment
         <Dropdown
         :options="selectNetworkOptions"
         :selected="selectSelectedNetworkOption"
         @input="handleNetworkInput"
         class="select bottom-items network-dropdown"
         size="single"
-      /> -->
+      />
     </div>
   </header>
 </template>
