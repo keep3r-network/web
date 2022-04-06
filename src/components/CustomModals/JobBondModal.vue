@@ -62,7 +62,7 @@
                 <b>
                   Warning: If the job you are adding credits to is considered a malicious job by governance, your LP
                   tokens might get slashed. Read more about this in the
-                  <a href="https://docs.thekeep3r.network/core/jobs" target="_blank">docs</a>.
+                  <a href="https://docs.keep3r.network/core/jobs" target="_blank">docs</a>.
                 </b>
               </p>
             </div>

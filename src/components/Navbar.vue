@@ -4,7 +4,7 @@
       <div>
         <p>{{ currentDate }} | KP3R: ${{ currentPrice || ' ----' }}</p>
       </div>
-      <!--<Navigation />-->
+      <Navigation />
       <div class="navbar-side">
         <p>This project is in beta. Use at your own risk.</p>
         <a href="https://discord.gg/9JBxTWR4nZ" target="_blank"><img alt="Discord" src="../assets/discord.svg" /></a>
@@ -21,9 +21,12 @@
 import { DateTime } from 'luxon';
 import axios from 'axios';
 
+import Navigation from '@/components/Navigation.vue';
+
 export default {
   name: 'Navbar',
   components: {
+    Navigation
   },
   data() {
     return {
