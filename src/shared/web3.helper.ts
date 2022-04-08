@@ -13,7 +13,7 @@ const CONTRACT_ADDRESSES: any = {
   '1': {
     // Mainnet
     Keep3r: '0x1cEB5cB57C4D4E2b2433641b95Dd330A33185A44',
-    Keep3rV2: '0x4a6cff9e1456eaa3b6f37572395c6fa0c959edab',
+    Keep3rV2: '0xeb02addCfD8B773A5FFA6B9d1FE99c566f8c44CC',
   },
   '4': {
     // Rinkeby
@@ -33,7 +33,7 @@ const CONTRACT_ADDRESSES: any = {
   '1337': {
     // Localhost
     Keep3r: '0x1cEB5cB57C4D4E2b2433641b95Dd330A33185A44',
-    Keep3rV2: '0x4a6cff9e1456eaa3b6f37572395c6fa0c959edab',
+    Keep3rV2: '0xeb02addCfD8B773A5FFA6B9d1FE99c566f8c44CC',
   },
 };
 

@@ -12,7 +12,7 @@ const gasLimit = 10_000_000;
   const [ourWallet] = ((await hre.ethers.getSigners()) as unknown) as SignerWithAddress[];
 
   const { uniV3PairFactory } = getMainnetSdk(ourWallet);
-  const kp3rV2 = await hre.ethers.getContractAt(kp3rV2Abi, '0x4A6cFf9E1456eAa3b6f37572395C6fa0c959edAB');
+  const kp3rV2 = await hre.ethers.getContractAt(kp3rV2Abi, '0xeb02addCfD8B773A5FFA6B9d1FE99c566f8c44CC');
 
   const governance = await impersonate(await kp3rV2.callStatic.governance());
   await setBalance(await governance._address, toUnit(1_000));
