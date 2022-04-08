@@ -1,4 +1,4 @@
-# keep3r-web
+# keep3r-web v2
 
 ## Project setup
 ```
